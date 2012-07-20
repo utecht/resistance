@@ -1,4 +1,4 @@
-class GamesController < ApplicationController
+class LobbyController < ApplicationController
   def login
     s = request.session_options[:id]
     name = params[:name]

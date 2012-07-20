@@ -1,0 +1,33 @@
+<% @game %>
+
+<% @game.players %>
+
+<h2>Rounds</h2>
+
+<table>
+  <tr>
+    <th>#</th>
+    <th>Number Required</th>
+    <th>Players Sent</th>
+  </tr>
+
+  <% @game.rounds.each do |r| %>
+    <tr>
+      <td><%= r.number %></td>
+      <td><%= r.required %></td>
+      <td><%= r.players %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h2>Players</h2>
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% @game.players.each do |p| %>
+    <tr>
+      <td><%= p.name %></td>
+    </tr>
+  <% end %>
+</table>
