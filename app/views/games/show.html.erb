@@ -1,0 +1,25 @@
+<p>List of all players</p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Session</th>
+  </tr>
+
+  <% @players.each do |p| %>
+    <tr>
+      <td><span><%= p.name %></span></td>
+      <td><span><%= p.session %></span></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<p>Log in</p>
+<%= form_tag("/login", :method => "post") do %>
+  <%= label_tag(:name, "Name:") %>
+  <%= text_field_tag(:name) %>
+  <%= submit_tag("Login") %>
+<% end %>
+
+<%= link_to "logout", "logout" %>

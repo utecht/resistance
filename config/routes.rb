@@ -1,4 +1,7 @@
 Resistance::Application.routes.draw do
+  resource :games
+  match 'login' => "games#login", :via => :post
+  match 'logout' => "games#logout"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
