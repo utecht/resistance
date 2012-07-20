@@ -3,17 +3,17 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Session</th>
   </tr>
-
+  <%= form_tag("/game", :method => "post") do %>
   <% @players.each do |p| %>
     <tr>
-      <td><span><%= p.name %></span></td>
-      <td><span><%= p.session %></span></td>
+      <td><%= check_box_tag('players[]', p.id) %>
+        <%= label_tag(p.id, p.name)%></td>
     </tr>
   <% end %>
 </table>
-
+<%= submit_tag("Start Game") %>
+<% end %>
 
 <p>Log in</p>
 <%= form_tag("/login", :method => "post") do %>
